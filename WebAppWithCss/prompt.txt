@@ -1,0 +1,1 @@
+Create a single page app that has a coloured background with a floating header textbox in the center which just says “technical potpourri!”. When the user clicks on the text, it changes color.
