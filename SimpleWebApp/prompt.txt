@@ -1,0 +1,1 @@
+Create a simple web app with a landing page, an about us page, and a contact form. The landing page should have a hero section with a call to action button. The about us page should include some placeholder text about the company's mission. The contact form should collect name, email, and message. Use Flask for the backend and include basic styling.
