@@ -1,4 +1,4 @@
-# Import necessary libraries
+# Import necessary libraries which include Flask and render_template
 from flask import Flask, render_template, request
 
 app = Flask(__name__)
