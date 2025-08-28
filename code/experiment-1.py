@@ -40,32 +40,32 @@ examples = [
 ]
 
 # 3. Run the extraction on your input text
-input_text = (
+inputText = (
     "Lady Juliet gazed longingly at the stars, her heart aching for Romeo"
 )
 
 result = lx.extract(
-    text_or_documents=input_text,
+    text_or_documents=inputText,
     prompt_description=prompt,
     examples=examples,
     model_id="gemini-2.5-pro",
 )
 
 # Define output paths
-OUTPUT_JSONL_FILENAME = "extraction_results.jsonl"
-OUTPUT_HTML_FILENAME = "visualization.html"
+outputJsonlFilename = "extraction_results.jsonl"
+outputHtmlFilename = "visualization.html"
 
-script_dir = os.path.dirname(os.path.abspath(__file__))
+scriptDir = os.path.dirname(os.path.abspath(__file__))
 
 # Go up one level from 'code' to the project root, then into the 'data' directory
-OUTPUT_JSONL_PATH = os.path.join(script_dir, "..", "test_output", OUTPUT_JSONL_FILENAME)
-OUTPUT_HTML_PATH = os.path.join(script_dir, "..", "test_output", OUTPUT_HTML_FILENAME)
+outputJsonlPath = os.path.join(scriptDir, "..", "test_output", outputJsonlFilename)
+outputHtmlPath = os.path.join(scriptDir, "..", "test_output", outputHtmlFilename)
 
 # Save the results to a JSONL file
-lx.io.save_annotated_documents([result], output_name=OUTPUT_JSONL_FILENAME)
+lx.io.save_annotated_documents([result], output_name=outputJsonlFilename)
 
 # Generate the interactive visualization from the file
-html_content = lx.visualize(OUTPUT_JSONL_PATH)
-with open(OUTPUT_HTML_PATH, "w", encoding="utf-8") as f:
-    f.write(str(html_content))
-print(f"Visualization successfully saved to '{OUTPUT_HTML_PATH}'")
+htmlContent = lx.visualize(outputJsonlPath)
+with open(outputHtmlPath, "w", encoding="utf-8") as f:
+    f.write(str(htmlContent))
+print(f"Visualization successfully saved to '{outputHtmlPath}'")
