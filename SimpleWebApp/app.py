@@ -10,17 +10,19 @@ def index():
 def about():
     return render_template('about.html')
 
-@app.route('/contact', methods=['GET', 'POST'])
+@app.route('/contact')
 def contact():
-    if request.method == 'POST':
-        # Handle form submission
-        name = request.form['name']
-        email = request.form['email']
-        message = request.form['message']
-        # For this example, we'll just print the data
-        print(f'Name: {name}, Email: {email}, Message: {message}')
-        return 'Thank you for your message!'
     return render_template('contact.html')
+
+
+@app.route('/submit', methods=['POST'])
+def submit():
+    name = request.form['name']
+    email = request.form['email']
+    message = request.form['message']
+    # Here you can add code to process the form data, such as sending an email or saving to a database
+    print(f'Name: {name}, Email: {email}, Message: {message}')
+    return 'Form submitted successfully!' 
 
 if __name__ == '__main__':
     app.run(debug=True)
