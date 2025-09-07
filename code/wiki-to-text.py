@@ -5,10 +5,11 @@ import requests
 from bs4 import BeautifulSoup
 import os
 
+# Function to fetch and save Wikipedia content
 def wikipedia_to_text(url, filename):
     try:
         res = requests.get(url)
-        res.raise_for_status()  # Raise an exception for bad status codes
+        res.raise_for_status()  # Raise an exception for bad status codes 
 
         soup = BeautifulSoup(res.text, 'html.parser')
 
