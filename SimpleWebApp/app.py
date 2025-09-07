@@ -27,11 +27,11 @@ def contact():
 
 @app.route('/submit', methods=['POST'])
 def submit():
-    name = request.form['name']
-    email = request.form['email']
+    UserName = request.form['name']
+    UserEmail = request.form['email']
     message = request.form['message']
     # Here you can add code to process the form data, such as sending an email or saving to a database
-    print(f'Name: {name}, Email: {email}, Message: {message}')
+    print(f'Name: {UserName}, Email: {UserEmail}, Message: {message}')
     return 'Form submitted successfully!' 
 
 # Start the development server
