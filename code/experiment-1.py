@@ -6,7 +6,7 @@ from dotenv import load_dotenv
 # Load environment variables from .env file
 load_dotenv()
 
-# 1. Define the prompt and extraction rules
+# 1. Define the prompt and extraction rules for langextract
 prompt = textwrap.dedent("""
     Extract characters, emotions, and relationships in order of appearance.
     Use exact text for extractions. Do not paraphrase or overlap entities.
